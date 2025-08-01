@@ -13,7 +13,6 @@
       color: #000;
       font-family: 'Martian Mono', monospace;
     }
-    /* Mini rounded icon menu box */
     .icon-menu {
       position: fixed;
       top: 32px;
@@ -21,7 +20,7 @@
       width: 56px;
       height: 250px;
       background: #fff;
-      border: 1.5px solid #d1d5db; /* gray stroke */
+      border: 1.5px solid #d1d5db;
       border-top-right-radius: 26px;
       border-bottom-right-radius: 26px;
       box-shadow: 1px 2px 10px rgba(0,0,0,0.06);
@@ -50,14 +49,14 @@
     .icon-menu a svg {
       width: 24px;
       height: 24px;
-      stroke: #374151; /* gray-700 */
+      stroke: #374151;
       stroke-width: 2;
       fill: none;
       transition: stroke 0.2s;
       pointer-events: none;
     }
     .icon-menu a:hover, .icon-menu a.active {
-      background: #3b82f6; /* blue-500 */
+      background: #3b82f6;
     }
     .icon-menu a:hover svg, .icon-menu a.active svg {
       stroke: #fff;
@@ -89,13 +88,13 @@
       background: #ffd6d6;
       color: #b30000;
       border-radius: 8px;
-      padding: 1.5rem;
+      padding: 2.5rem 2rem;
       margin: 2rem 0;
-      max-width: 1200px; /* wider! */
-      width: 98vw;       /* much wider on big screens */
+      max-width: 1800px; /* even wider */
+      width: 99vw;       /* almost full width */
       box-shadow: 0 2px 8px rgba(200,0,0,0.03);
       text-align: left;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
     }
     .banner ul {
       padding-left: 1.2rem;
@@ -167,10 +166,10 @@
       color: #666;
       width: 100%;
     }
-    @media (max-width: 1300px) {
+    @media (max-width: 1900px) {
       .banner {
         max-width: 99vw;
-        padding: 1rem;
+        padding: 1.5rem 1rem;
       }
     }
     @media (max-width: 700px) {
