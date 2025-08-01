@@ -18,7 +18,7 @@
     }
     header {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 0.5rem 1rem;
       border-bottom: 2px solid #eee;
     }
     header img {
@@ -28,6 +28,30 @@
       font-size: 2rem;
       margin: 0.5rem 0;
       text-align: center;
+    }
+    .banner {
+      background: #ffd6d6;
+      color: #b30000;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem auto 2rem auto;
+      max-width: 800px;
+      box-shadow: 0 2px 8px rgba(200,0,0,0.03);
+      text-align: left;
+      font-size: 0.5rem;
+    }
+    .banner ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .banner li {
+      margin-bottom: 0.5rem;
+    }
+    .banner .notes {
+      margin-top: 1.2rem;
+      font-size: 0.97rem;
+      font-style: italic;
     }
     main {
       padding: 2rem;
@@ -79,6 +103,9 @@
       color: #666;
     }
     @media (max-width: 600px) {
+      .banner {
+        padding: 1rem;
+      }
       .button-container {
         text-align: center;
       }
@@ -97,6 +124,23 @@
     <img src="Caste.jpg" alt="Anti-Caste Logo" />
     <h1>Anti-Caste Watch</h1>
     <p>Calling out public casteist speech.</p>
+    <div class="banner">
+      <p>
+        To publicly document, track and apply social pressure on individuals making casteist remarks especially those in positions of influence (including employment, media and politics) to deter future casteist behavior through visibility and consequence.
+      </p>
+      <strong>What happens after submitting a report?</strong>
+      <ul>
+        <li>Reports will undergo verification to determine their authenticity and will be logged in the database.</li>
+        <li>A direct notification will be sent to the individual's current employer. If no action is taken by the employer, a public post will be made with proofs on LinkedIn and other affiliated social media platforms.</li>
+        <li>Requests will be sent to networks of vendors, partners and employers for voluntary blacklisting.</li>
+        <li>If the person is a public sector employee (government official), social media campaigns will be initiated.</li>
+      </ul>
+      <div class="notes">
+        <strong>Notes:</strong><br>
+        - Every reported individual will be removed (archived) from the database after 10 years if no further remarks or incidents occur during that period.<br>
+        - For individuals aged 16–20, an alias name will be used. Their entry will be removed after 5 years if there are no repeat incidents.
+      </div>
+    </div>
   </header>
 
   <main>
