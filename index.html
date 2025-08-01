@@ -21,8 +21,8 @@
       height: 250px;
       background: #fff;
       border: 1.5px solid #d1d5db;
-      border-top-right-radius: 26px;
-      border-bottom-right-radius: 26px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
       box-shadow: 1px 2px 10px rgba(0,0,0,0.06);
       display: flex;
       flex-direction: column;
@@ -80,33 +80,45 @@
       text-align: center;
     }
     .banner-wrap {
-      width: 100%;
+      width: 100vw;
       display: flex;
       justify-content: center;
+      margin-left: -56px; /* so banner starts from true edge, compensating for menu */
     }
     .banner {
       background: #ffd6d6;
       color: #b30000;
-      border-radius: 8px;
-      padding: 2.5rem 2rem;
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      padding: 1.2rem 0;
       margin: 2rem 0;
-      max-width: 1800px; /* even wider */
-      width: 99vw;       /* almost full width */
+      width: 100vw;
+      font-size: 0.88rem; /* smaller font size */
       box-shadow: 0 2px 8px rgba(200,0,0,0.03);
       text-align: left;
-      font-size: 1.05rem;
+    }
+    .banner > div,
+    .banner > p,
+    .banner > ul,
+    .banner > strong {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
     .banner ul {
-      padding-left: 1.2rem;
+      padding-left: 2.5rem;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
+      font-size: 0.88rem;
     }
     .banner li {
       margin-bottom: 0.5rem;
     }
     .banner .notes {
       margin-top: 1.2rem;
-      font-size: 0.95rem;
+      font-size: 0.87rem;
       font-style: italic;
     }
     main {
@@ -166,10 +178,14 @@
       color: #666;
       width: 100%;
     }
-    @media (max-width: 1900px) {
-      .banner {
-        max-width: 99vw;
-        padding: 1.5rem 1rem;
+    @media (max-width: 1400px) {
+      .banner > div,
+      .banner > p,
+      .banner > ul,
+      .banner > strong {
+        max-width: 98vw;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
       }
     }
     @media (max-width: 700px) {
@@ -192,6 +208,9 @@
       .icon-menu a svg {
         width: 18px;
         height: 18px;
+      }
+      .banner-wrap {
+        margin-left: 0;
       }
     }
   </style>
