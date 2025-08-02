@@ -19,9 +19,9 @@
       min-height: 100vh;
     }
 
-    /* Sidebar */
+    /* Wider Sidebar (88px) */
     .sidebar {
-      width: 72px;
+      width: 88px;
       background: #f8f9fa;
       display: flex;
       flex-direction: column;
@@ -30,8 +30,8 @@
     }
 
     .sidebar-icon {
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -55,6 +55,7 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      margin-left: -16px;
     }
 
     /* Header */
@@ -133,8 +134,8 @@
 
     /* Table */
     table {
-      width: calc(100% - 80px);
-      margin-left: 80px;
+      width: calc(100% - 96px);
+      margin-left: 96px;
       border-collapse: separate;
       border-spacing: 0.5rem;
       text-align: left;
@@ -170,7 +171,7 @@
     /* Button */
     .button-container {
       text-align: center;
-      margin: 1.5rem 0 1.5rem 80px;
+      margin: 1.5rem 0 1.5rem 96px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -270,13 +271,13 @@
   </style>
 </head>
 <body>
-  <!-- Left Sidebar - Simplified with line icons -->
+  <!-- Left Sidebar - Wider Version -->
   <div class="sidebar">
     <div class="sidebar-icon active">
-      <span class="material-icons-outlined">home</span> <!-- Line style icon -->
+      <span class="material-icons-outlined">home</span>
     </div>
     <div class="sidebar-icon">
-      <span class="material-icons-outlined">info</span> <!-- Line style icon -->
+      <span class="material-icons-outlined">info</span>
     </div>
   </div>
 
