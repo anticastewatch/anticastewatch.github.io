@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anti-Caste Watch</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Saira:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style>
     body {
@@ -12,12 +12,12 @@
       padding: 0;
       background: #fff;
       color: #181818;
-      font-family: 'Fraunces', serif;
+      font-family: 'Saira', sans-serif;
       font-weight: 300;
       line-height: 1.6;
     }
 
-    /* SIDEBAR - FIXED ICONS WITH CLOSER TEXT */
+    /* SIDEBAR - COMPLETELY FIXED */
     .sidebar {
       width: 88px;
       background: #f8f9fa;
@@ -26,6 +26,7 @@
       z-index: 1000;
       box-shadow: 2px 0 5px rgba(0,0,0,0.05);
       transition: width 0.3s ease;
+      font-family: 'Montserrat', sans-serif; /* Sidebar uses Montserrat */
     }
 
     .sidebar:hover {
@@ -41,20 +42,14 @@
       position: relative;
       color: #5f6368;
       cursor: pointer;
-      font-family: 'Montserrat', sans-serif;
       font-weight: 700;
     }
 
-    .sidebar-icon.active {
-      color: #1967d2;
-    }
-
-    /* Adjusted text positioning - closer to icon */
     .sidebar-icon .icon-text {
       position: absolute;
-      left: 60px; /* Moved closer from 88px */
-      width: 140px; /* Adjusted to match new position */
-      padding-left: 8px; /* Reduced from 16px */
+      left: 60px;
+      width: 140px;
+      padding-left: 8px;
       opacity: 0;
       transition: opacity 0.2s ease;
       pointer-events: none;
@@ -65,23 +60,22 @@
       opacity: 1;
     }
 
+    .sidebar-icon.active {
+      color: #1967d2;
+    }
+
     .sidebar-footer {
       margin-top: auto;
       padding-bottom: 1rem;
     }
 
-    /* MAIN CONTENT */
+    /* MAIN CONTENT - FIXED POSITION */
     .main-content {
       margin-left: 88px;
       padding: 0;
-      transition: margin-left 0.3s ease;
     }
 
-    .sidebar:hover ~ .main-content {
-      margin-left: 200px;
-    }
-
-    /* HEADER */
+    /* HEADER - ONLY THESE ELEMENTS MOVE */
     .header {
       padding: 1rem 2rem;
       display: flex;
@@ -100,10 +94,11 @@
       position: relative;
       padding-right: 2rem;
       transition: transform 0.3s ease;
+      font-family: 'Montserrat', sans-serif; /* Logo uses Montserrat */
     }
 
     .sidebar:hover ~ .main-content .header .logo {
-      transform: translateX(100px);
+      transform: translateX(40px); /* Exactly 40px movement */
     }
 
     .logo img {
@@ -116,7 +111,6 @@
       font-weight: 700;
       color: #7b7b7b;
       letter-spacing: -0.03em;
-      font-family: 'Montserrat', sans-serif;
       line-height: 1.2;
       white-space: normal;
       width: 100px;
@@ -142,14 +136,13 @@
     }
 
     .sidebar:hover ~ .main-content .header .search-container {
-      transform: translateX(100px);
+      transform: translateX(40px); /* Exactly 40px movement */
     }
 
     .search-container input {
       width: 100%;
       padding: 0.8rem 1.2rem 0.8rem 3rem;
       border: none;
-      font-family: 'Fraunces', serif;
       font-size: 1rem;
       background: transparent;
     }
@@ -162,7 +155,7 @@
       color: #5f6368;
     }
 
-    /* PAGE CONTENT */
+    /* PAGE CONTENT - DOES NOT MOVE */
     .page-content {
       padding: 2rem;
     }
@@ -202,7 +195,6 @@
       background-color: #e6f2ff !important;
     }
 
-    /* BUTTON */
     .button-container {
       text-align: center;
       margin: 1.5rem 0;
@@ -228,7 +220,6 @@
       color: #fff;
     }
 
-    /* REPORT NOTE */
     .report-note {
       font-size: 0.75rem;
       color: #b30000;
@@ -294,7 +285,6 @@
       margin-bottom: 0.3rem;
     }
 
-    /* FOOTER */
     footer {
       padding: 1rem;
       text-align: center;
@@ -302,16 +292,11 @@
       color: #666;
       border-top: 1px solid #eee;
       margin-left: 88px;
-      transition: margin-left 0.3s ease;
-    }
-
-    .sidebar:hover ~ .main-content footer {
-      margin-left: 200px;
     }
   </style>
 </head>
 <body>
-  <!-- Left Sidebar with adjusted text position -->
+  <!-- Sidebar with fixed icons -->
   <div class="sidebar">
     <div class="sidebar-icon active">
       <span class="material-icons-outlined">home</span>
@@ -330,9 +315,9 @@
     </div>
   </div>
 
-  <!-- Main Content Area -->
+  <!-- Main Content -->
   <div class="main-content">
-    <!-- Header -->
+    <!-- Only these elements move 40px -->
     <div class="header">
       <div class="logo">
         <img src="Caste.jpg" alt="Anti-Caste Watch Logo">
@@ -344,7 +329,7 @@
       </div>
     </div>
 
-    <!-- Page Content -->
+    <!-- Page Content - DOES NOT MOVE -->
     <div class="page-content">
       <div class="button-container">
         <a href="#">Submit a Report</a>
@@ -417,7 +402,6 @@
       </table>
     </div>
 
-    <!-- Footer -->
     <footer>
       &copy; 2025 Anti-Caste Watch. Built with zero funding. 100% public.
     </footer>
