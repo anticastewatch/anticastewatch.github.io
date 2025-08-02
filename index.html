@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anti-Caste Watch</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
@@ -17,19 +17,15 @@
       line-height: 1.6;
     }
 
-    /* Sidebar with fixed centered icons */
+    /* SIDEBAR - FIXED ICONS WITH CLOSER TEXT */
     .sidebar {
       width: 88px;
       background: #f8f9fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 1rem;
-      transition: width 0.3s ease;
       position: fixed;
       height: 100vh;
       z-index: 1000;
       box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      transition: width 0.3s ease;
     }
 
     .sidebar:hover {
@@ -37,26 +33,31 @@
     }
 
     .sidebar-icon {
-      width: 88px; /* Fixed width matching sidebar */
+      width: 88px;
       height: 56px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      position: relative;
       color: #5f6368;
       cursor: pointer;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      position: relative; /* For text positioning */
     }
 
-    /* Text that appears on hover */
+    .sidebar-icon.active {
+      color: #1967d2;
+    }
+
+    /* Adjusted text positioning - closer to icon */
     .sidebar-icon .icon-text {
       position: absolute;
-      left: 88px; /* Start from edge of icon */
-      width: 112px; /* 200px - 88px = 112px */
-      padding-left: 16px;
+      left: 60px; /* Moved closer from 88px */
+      width: 140px; /* Adjusted to match new position */
+      padding-left: 8px; /* Reduced from 16px */
       opacity: 0;
-      transition: opacity 0.2s ease 0.1s;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
       white-space: nowrap;
     }
 
@@ -64,26 +65,23 @@
       opacity: 1;
     }
 
-    .sidebar-icon.active {
-      color: #1967d2;
-    }
-
-    /* Dark mode icon at bottom */
     .sidebar-footer {
       margin-top: auto;
       padding-bottom: 1rem;
-      width: 88px;
-      display: flex;
-      justify-content: center;
     }
 
-    /* Main Content */
+    /* MAIN CONTENT */
     .main-content {
       margin-left: 88px;
       padding: 0;
+      transition: margin-left 0.3s ease;
     }
 
-    /* Header */
+    .sidebar:hover ~ .main-content {
+      margin-left: 200px;
+    }
+
+    /* HEADER */
     .header {
       padding: 1rem 2rem;
       display: flex;
@@ -104,7 +102,6 @@
       transition: transform 0.3s ease;
     }
 
-    /* Shift logo 100px when sidebar expands */
     .sidebar:hover ~ .main-content .header .logo {
       transform: translateX(100px);
     }
@@ -144,7 +141,6 @@
       transition: transform 0.3s ease;
     }
 
-    /* Shift search container 100px when sidebar expands */
     .sidebar:hover ~ .main-content .header .search-container {
       transform: translateX(100px);
     }
@@ -166,12 +162,11 @@
       color: #5f6368;
     }
 
-    /* Page Content */
+    /* PAGE CONTENT */
     .page-content {
       padding: 2rem;
     }
 
-    /* Table */
     table {
       width: calc(100% - 2rem);
       margin: 0 auto;
@@ -207,7 +202,7 @@
       background-color: #e6f2ff !important;
     }
 
-    /* Button */
+    /* BUTTON */
     .button-container {
       text-align: center;
       margin: 1.5rem 0;
@@ -233,7 +228,7 @@
       color: #fff;
     }
 
-    /* Report Note */
+    /* REPORT NOTE */
     .report-note {
       font-size: 0.75rem;
       color: #b30000;
@@ -299,7 +294,7 @@
       margin-bottom: 0.3rem;
     }
 
-    /* Footer */
+    /* FOOTER */
     footer {
       padding: 1rem;
       text-align: center;
@@ -307,11 +302,16 @@
       color: #666;
       border-top: 1px solid #eee;
       margin-left: 88px;
+      transition: margin-left 0.3s ease;
+    }
+
+    .sidebar:hover ~ .main-content footer {
+      margin-left: 200px;
     }
   </style>
 </head>
 <body>
-  <!-- Left Sidebar -->
+  <!-- Left Sidebar with adjusted text position -->
   <div class="sidebar">
     <div class="sidebar-icon active">
       <span class="material-icons-outlined">home</span>
@@ -322,7 +322,6 @@
       <span class="icon-text">About</span>
     </div>
     
-    <!-- Dark Mode Toggle at Bottom -->
     <div class="sidebar-footer">
       <div class="sidebar-icon">
         <span class="material-icons-outlined">dark_mode</span>
