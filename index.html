@@ -17,6 +17,7 @@
       line-height: 1.6;
     }
 
+    /* [All your existing CSS remains exactly the same...] */
     /* SIDEBAR */
     .sidebar {
       width: 88px;
@@ -498,6 +499,21 @@
     searchInput.addEventListener('blur', () => {
       cursor.style.display = 'inline-block';
       document.querySelector('.placeholder-text').style.opacity = '1';
+    });
+    
+    // Navigation between pages - UPDATED FOR GITHUB PAGES
+    document.querySelectorAll('.sidebar-icon')[0].addEventListener('click', function() {
+      // Change to your repo name if needed
+      window.location.href = 'index.html'; 
+      // OR if using repo-name in URL:
+      // window.location.href = 'Anti-Caste-Watch/index.html';
+    });
+    
+    document.querySelectorAll('.sidebar-icon')[1].addEventListener('click', function() {
+      // Change to your repo name if needed
+      window.location.href = 'about.html';
+      // OR if using repo-name in URL:
+      // window.location.href = 'Anti-Caste-Watch/about.html';
     });
     
     // Start the typewriter effect
