@@ -17,7 +17,7 @@
       line-height: 1.6;
     }
 
-    /* SIDEBAR - COMPLETELY FIXED */
+    /* SIDEBAR */
     .sidebar {
       width: 88px;
       background: #f8f9fa;
@@ -33,6 +33,7 @@
       width: 200px;
     }
 
+    /* MAIN ICONS - 50px DOWN FROM ORIGINAL */
     .sidebar-icon {
       width: 88px;
       height: 56px;
@@ -43,6 +44,7 @@
       color: #5f6368;
       cursor: pointer;
       font-weight: 700;
+      transform: translateY(50px);
     }
 
     .sidebar-icon .icon-text {
@@ -64,18 +66,20 @@
       color: #1967d2;
     }
 
+    /* MOON ICON - 50px FROM BOTTOM */
     .sidebar-footer {
-      margin-top: auto;
+      position: absolute;
+      bottom: 50px; /* Exactly 50px from bottom */
+      width: 100%;
       padding-bottom: 1rem;
     }
 
-    /* MAIN CONTENT - FIXED POSITION */
+    /* [Rest of the CSS remains unchanged] */
     .main-content {
       margin-left: 88px;
       padding: 0;
     }
 
-    /* HEADER - ONLY THESE ELEMENTS MOVE */
     .header {
       padding: 1rem 2rem;
       display: flex;
@@ -98,7 +102,7 @@
     }
 
     .sidebar:hover ~ .main-content .header .logo {
-      transform: translateX(70px); /* Exactly 70px movement */
+      transform: translateX(100px);
     }
 
     .logo img {
@@ -136,7 +140,7 @@
     }
 
     .sidebar:hover ~ .main-content .header .search-container {
-      transform: translateX(70px); /* Exactly 70px movement */
+      transform: translateX(100px);
     }
 
     .search-container input {
@@ -155,7 +159,6 @@
       color: #5f6368;
     }
 
-    /* PAGE CONTENT - DOES NOT MOVE */
     .page-content {
       padding: 2rem;
     }
@@ -296,7 +299,7 @@
   </style>
 </head>
 <body>
-  <!-- Sidebar with fixed icons -->
+  <!-- Sidebar -->
   <div class="sidebar">
     <div class="sidebar-icon active">
       <span class="material-icons-outlined">home</span>
@@ -307,6 +310,7 @@
       <span class="icon-text">About</span>
     </div>
     
+    <!-- Moon icon 50px from bottom -->
     <div class="sidebar-footer">
       <div class="sidebar-icon">
         <span class="material-icons-outlined">dark_mode</span>
@@ -315,9 +319,8 @@
     </div>
   </div>
 
-  <!-- Main Content -->
+  <!-- [Rest of the HTML remains unchanged] -->
   <div class="main-content">
-    <!-- Only these elements move 70px -->
     <div class="header">
       <div class="logo">
         <img src="Caste.jpg" alt="Anti-Caste Watch Logo">
@@ -329,7 +332,6 @@
       </div>
     </div>
 
-    <!-- Page Content - DOES NOT MOVE -->
     <div class="page-content">
       <div class="button-container">
         <a href="#">Submit a Report</a>
