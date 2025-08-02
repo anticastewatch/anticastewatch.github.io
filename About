@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Anti-Caste Watch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Saira:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #181818;
+      font-family: 'Saira', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 88px;
+      background: #f8f9fa;
+      position: fixed;
+      height: 100vh;
+      z-index: 1000;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      transition: width 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .sidebar:hover {
+      width: 200px;
+    }
+
+    /* MAIN ICONS - 50px DOWN FROM ORIGINAL */
+    .sidebar-icon {
+      width: 88px;
+      height: 56px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: #5f6368;
+      cursor: pointer;
+      font-weight: 700;
+      transform: translateY(50px);
+    }
+
+    .sidebar-icon .icon-text {
+      position: absolute;
+      left: 60px;
+      width: 140px;
+      padding-left: 8px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .sidebar:hover .sidebar-icon .icon-text {
+      opacity: 1;
+    }
+
+    .sidebar-icon.active {
+      color: #1967d2;
+    }
+
+    /* MOON ICON - 50px FROM BOTTOM */
+    .sidebar-footer {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      padding-bottom: 1rem;
+    }
+
+    .main-content {
+      margin-left: 88px;
+      padding: 0;
+    }
+
+    .header {
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-right: 2rem;
+      position: relative;
+      padding-right: 2rem;
+      transition: transform 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .sidebar:hover ~ .main-content .header .logo {
+      transform: translateX(100px);
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #7b7b7b;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      white-space: normal;
+      width: 100px;
+    }
+
+    .logo::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 60%;
+      width: 1px;
+      background: #e0e0e0;
+    }
+
+    .search-container {
+      flex: 1;
+      max-width: 800px;
+      position: relative;
+      padding-right: 2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar:hover ~ .main-content .header .search-container {
+      transform: translateX(100px);
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 0.8rem 1.2rem 0.8rem 3rem;
+      border: none;
+      font-size: 1rem;
+      background: transparent;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #5f6368;
+    }
+
+    .page-content {
+      padding: 2rem;
+    }
+
+    .about-section {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-section h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: #b30000;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      margin: 2rem 0 1rem 0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .about-section p {
+      margin-bottom: 1rem;
+    }
+
+    .about-section ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .about-section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .mission-box {
+      background-color: #ffebeb;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid #b30000;
+    }
+
+    .policy-box {
+      background-color: #f5f5f5;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid #5f6368;
+    }
+
+    .highlight-box {
+      background-color: #e6f2ff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 2rem 0;
+      border-left: 4px solid #1967d2;
+    }
+
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      border-top: 1px solid #eee;
+      margin-left: 88px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-icon">
+      <span class="material-icons-outlined">home</span>
+      <span class="icon-text">Home</span>
+    </div>
+    <div class="sidebar-icon active">
+      <span class="material-icons-outlined">info</span>
+      <span class="icon-text">About</span>
+    </div>
+    
+    <!-- Moon icon 50px from bottom -->
+    <div class="sidebar-footer">
+      <div class="sidebar-icon">
+        <span class="material-icons-outlined">dark_mode</span>
+        <span class="icon-text">Dark Mode</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="header">
+      <div class="logo">
+        <img src="Caste.jpg" alt="Anti-Caste Watch Logo">
+        <div class="logo-text">Anti-Caste Watch</div>
+      </div>
+      <div class="search-container">
+        <span class="material-icons-outlined search-icon">search</span>
+        <input type="text" placeholder="Search about page...">
+      </div>
+    </div>
+
+    <div class="page-content">
+      <div class="about-section">
+        <h1>Anti-Caste Watch</h1>
+        
+        <p>Anti-Caste Watch is a public platform created to track, document, and expose individuals who engage in casteist speech or behavior, especially in public and professional spaces.</p>
+        
+        <div class="mission-box">
+          <h2>🎯 Our Mission</h2>
+          <p>We aim to build social and economic consequences for caste-based hate and discrimination — without waiting for slow-moving institutions or government bodies to act.</p>
+          <p>We must build a better society for future generations.</p>
+        </div>
+        
+        <div class="highlight-box">
+          <h2>❓ Why This Exists</h2>
+          <p>Casteism is not just a private belief. It directly affects hiring, safety, and dignity.</p>
+          <p>When casteist threats are made publicly — especially on media or online — there must be public accountability.</p>
+          <p>Employers, professional networks, and communities must take responsibility by refusing to empower caste bigots.</p>
+          <p>It is a criminal offense and should be treated as such.</p>
+        </div>
+        
+        <div class="highlight-box">
+          <h2>💥 What We Can Do</h2>
+          <ul>
+            <li>Document verifiable casteist statements, threats, or actions.</li>
+            <li>Record the name, employer, caste, location, and proof for each person.</li>
+            <li>Pressure institutions (companies, parties, media, etc.) to take action — and to exclude those who take pride in caste in any form.</li>
+            <li>Track whether the person has been warned, fired, defended, or ignored.</li>
+            <li>Create long-term social stigma around casteist behavior.</li>
+          </ul>
+        </div>
+        
+        <div class="policy-box">
+          <h2>🔄 Removal Policy</h2>
+          <p>We believe people can change — but only with time, accountability, and public responsibility.</p>
+          <ul>
+            <li><strong>Ages 16–20:</strong> Entries are removed after 2 years if there are no repeat offenses.</li>
+            <li><strong>Ages 21+:</strong> Entries are removed after 10 years of a clean record and a public apology.</li>
+          </ul>
+          <p>Early removal requests must include proof of transformation, such as:</p>
+          <ul>
+            <li>A sincere public apology</li>
+            <li>Ongoing anti-caste work</li>
+            <li>Surrender or cooperation with legal action</li>
+          </ul>
+        </div>
+        
+        <div class="highlight-box">
+          <h2>🏛 Why Without the Government?</h2>
+          <p>Government action is often slow, and in many cases, politically compromised or run by those with casteist bias.</p>
+          <p>We don't need to wait. Industry bodies, communities, and employers can take action now.</p>
+          <ul>
+            <li>Blacklist casteists from white-collar employment</li>
+            <li>Deny public-facing roles to those with a history of caste hate</li>
+            <li>Build pressure through transparency and undeniable proof</li>
+          </ul>
+        </div>
+        
+        <div class="mission-box">
+          <p>This is all about protecting dignity, safety, and justice. For a better, fairer future for all of us.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      &copy; 2025 Anti-Caste Watch. Built with zero funding. 100% public.
+    </footer>
+  </div>
+
+  <script>
+    // Simple navigation between pages
+    document.querySelector('.sidebar-icon:nth-child(1)').addEventListener('click', function() {
+      window.location.href = 'index.html'; // Your main page
+    });
+    
+    document.querySelector('.sidebar-icon:nth-child(2)').addEventListener('click', function() {
+      window.location.href = 'about.html'; // This page
+    });
+  </script>
+</body>
+</html>
