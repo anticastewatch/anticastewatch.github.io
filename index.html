@@ -66,6 +66,9 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
       font-size: 1.8rem;
       font-weight: 700;
       color: #7b7b7b;
@@ -75,6 +78,11 @@
       white-space: nowrap;
       position: relative;
       padding-right: 2rem;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
     }
 
     .logo::after {
@@ -288,7 +296,10 @@
   <div class="main-content">
     <!-- Header with Logo and Search -->
     <div class="header">
-      <div class="logo">Anti-Caste Watch</div>
+      <div class="logo">
+        <img src="Caste.jpg" alt="Anti-Caste Watch Logo">
+        <span>Anti-Caste Watch</span>
+      </div>
       <div class="search-container">
         <span class="material-icons search-icon">search</span>
         <input type="text" placeholder="Search reports...">
