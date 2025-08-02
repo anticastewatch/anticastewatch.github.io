@@ -17,6 +17,7 @@
       line-height: 1.6;
     }
 
+    /* SIDEBAR */
     .sidebar {
       width: 88px;
       background: #f8f9fa;
@@ -32,6 +33,7 @@
       width: 200px;
     }
 
+    /* MAIN ICONS - 50px DOWN FROM ORIGINAL */
     .sidebar-icon {
       width: 88px;
       height: 56px;
@@ -64,6 +66,7 @@
       color: #1967d2;
     }
 
+    /* MOON ICON - 50px FROM BOTTOM */
     .sidebar-footer {
       position: absolute;
       bottom: 50px;
@@ -147,6 +150,42 @@
       background: transparent;
     }
 
+    .search-container input::placeholder {
+      color: transparent;
+    }
+    
+    .search-container .placeholder-text {
+      position: absolute;
+      left: 3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: #5f6368;
+    }
+    
+    .search-container .placeholder-text .static {
+      display: inline;
+    }
+    
+    .search-container .placeholder-text .dynamic {
+      display: inline;
+      color: #5f6368;
+    }
+    
+    .search-container .placeholder-text .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1rem;
+      background: #5f6368;
+      margin-left: 2px;
+      animation: blink 1s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     .search-icon {
       position: absolute;
       left: 1rem;
@@ -206,7 +245,7 @@
 
     .closing-statement p {
       color: #1967d2;
-      font-weight: 700;
+      font-weight: 400;
       margin: 0;
       font-size: 1.1rem;
     }
@@ -233,6 +272,7 @@
       <span class="icon-text">About</span>
     </div>
     
+    <!-- Moon icon 50px from bottom -->
     <div class="sidebar-footer">
       <div class="sidebar-icon">
         <span class="material-icons-outlined">dark_mode</span>
@@ -249,7 +289,12 @@
       </div>
       <div class="search-container">
         <span class="material-icons-outlined search-icon">search</span>
-        <input type="text" placeholder="Search about page...">
+        <input type="text">
+        <div class="placeholder-text">
+          <span class="static">Search </span>
+          <span class="dynamic"></span>
+          <span class="cursor"></span>
+        </div>
       </div>
     </div>
 
@@ -308,6 +353,58 @@
   </div>
 
   <script>
+    // Typewriter effect for search placeholder - SAME AS HOME PAGE
+    const searchTerms = ['name', 'city', 'caste', 'anything'];
+    const dynamicText = document.querySelector('.placeholder-text .dynamic');
+    const cursor = document.querySelector('.placeholder-text .cursor');
+    let currentTerm = 0;
+    let isDeleting = false;
+    let text = '';
+    let typingSpeed = 100;
+    
+    function typeWriter() {
+      const currentWord = searchTerms[currentTerm];
+      
+      if (isDeleting) {
+        // Backspace effect
+        text = currentWord.substring(0, text.length - 1);
+        typingSpeed = 50;
+      } else {
+        // Typing effect
+        text = currentWord.substring(0, text.length + 1);
+        typingSpeed = 100;
+      }
+      
+      dynamicText.textContent = text;
+      
+      if (!isDeleting && text === currentWord) {
+        // Pause at end of word
+        typingSpeed = 3000;
+        isDeleting = true;
+      } else if (isDeleting && text === '') {
+        // Move to next word
+        isDeleting = false;
+        currentTerm = (currentTerm + 1) % searchTerms.length;
+        typingSpeed = 500; // Delay before starting next word
+      }
+      
+      setTimeout(typeWriter, typingSpeed);
+    }
+    
+    // Handle input focus/blur to pause/resume animation
+    const searchInput = document.querySelector('.search-container input');
+    
+    searchInput.addEventListener('focus', () => {
+      cursor.style.display = 'none';
+      document.querySelector('.placeholder-text').style.opacity = '0.5';
+    });
+    
+    searchInput.addEventListener('blur', () => {
+      cursor.style.display = 'inline-block';
+      document.querySelector('.placeholder-text').style.opacity = '1';
+    });
+    
+    // Navigation between pages
     document.querySelectorAll('.sidebar-icon')[0].addEventListener('click', function() {
       window.location.href = 'index.html';
     });
@@ -315,6 +412,9 @@
     document.querySelectorAll('.sidebar-icon')[1].addEventListener('click', function() {
       window.location.href = 'about.html';
     });
+    
+    // Start the typewriter effect
+    typeWriter();
   </script>
 </body>
 </html>
