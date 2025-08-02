@@ -17,7 +17,6 @@
       line-height: 1.6;
     }
 
-    /* SIDEBAR */
     .sidebar {
       width: 88px;
       background: #f8f9fa;
@@ -33,7 +32,6 @@
       width: 200px;
     }
 
-    /* MAIN ICONS - 50px DOWN FROM ORIGINAL */
     .sidebar-icon {
       width: 88px;
       height: 56px;
@@ -66,7 +64,6 @@
       color: #1967d2;
     }
 
-    /* MOON ICON - 50px FROM BOTTOM */
     .sidebar-footer {
       position: absolute;
       bottom: 50px;
@@ -241,6 +238,7 @@
       padding: 1.5rem;
       border-radius: 4px;
       margin: 3rem 0 2rem 0;
+      text-align: center;
     }
 
     .closing-statement p {
@@ -248,6 +246,7 @@
       font-weight: 400;
       margin: 0;
       font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     footer {
@@ -272,7 +271,6 @@
       <span class="icon-text">About</span>
     </div>
     
-    <!-- Moon icon 50px from bottom -->
     <div class="sidebar-footer">
       <div class="sidebar-icon">
         <span class="material-icons-outlined">dark_mode</span>
@@ -342,7 +340,8 @@
         </ul>
         
         <div class="closing-statement">
-          <p>This is all about protecting dignity, safety, and justice. For a better, fairer future for all of us.</p>
+          <p>This is all about protecting dignity, safety, and justice.<br>
+          For a better, fairer future for all of us.</p>
         </div>
       </div>
     </div>
@@ -353,7 +352,7 @@
   </div>
 
   <script>
-    // Typewriter effect for search placeholder - SAME AS HOME PAGE
+    // Typewriter effect for search placeholder
     const searchTerms = ['name', 'city', 'caste', 'anything'];
     const dynamicText = document.querySelector('.placeholder-text .dynamic');
     const cursor = document.querySelector('.placeholder-text .cursor');
@@ -385,7 +384,7 @@
         // Move to next word
         isDeleting = false;
         currentTerm = (currentTerm + 1) % searchTerms.length;
-        typingSpeed = 500; // Delay before starting next word
+        typingSpeed = 500;
       }
       
       setTimeout(typeWriter, typingSpeed);
