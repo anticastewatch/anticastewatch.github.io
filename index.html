@@ -79,12 +79,6 @@
     .main-content {
       margin-left: 88px;
       padding: 0;
-      transition: margin-left 0.3s ease;
-    }
-
-    /* Adjust main content when sidebar expands */
-    .sidebar:hover ~ .main-content {
-      margin-left: 200px;
     }
 
     /* Header */
@@ -96,12 +90,6 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      transition: padding-left 0.3s ease;
-    }
-
-    /* Shift header content when sidebar expands */
-    .sidebar:hover ~ .main-content .header {
-      padding-left: calc(2rem + 112px); /* 200px - 88px = 112px */
     }
 
     .logo {
@@ -111,12 +99,12 @@
       margin-right: 2rem;
       position: relative;
       padding-right: 2rem;
-      transition: margin-left 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    /* Shift logo when sidebar expands */
-    .sidebar:hover ~ .main-content .logo {
-      margin-left: 112px; /* 200px - 88px = 112px */
+    /* Shift logo slightly when sidebar expands */
+    .sidebar:hover ~ .main-content .header .logo {
+      transform: translateX(30px);
     }
 
     .logo img {
@@ -151,12 +139,12 @@
       max-width: 800px;
       position: relative;
       padding-right: 2rem;
-      transition: margin-left 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
-    /* Shift search container when sidebar expands */
-    .sidebar:hover ~ .main-content .search-container {
-      margin-left: 112px; /* 200px - 88px = 112px */
+    /* Shift search container slightly when sidebar expands */
+    .sidebar:hover ~ .main-content .header .search-container {
+      transform: translateX(30px);
     }
 
     .search-container input {
@@ -179,12 +167,6 @@
     /* Page Content */
     .page-content {
       padding: 2rem;
-      transition: margin-left 0.3s ease;
-    }
-
-    /* Shift page content when sidebar expands */
-    .sidebar:hover ~ .main-content .page-content {
-      margin-left: 112px; /* 200px - 88px = 112px */
     }
 
     /* Table */
@@ -323,12 +305,6 @@
       color: #666;
       border-top: 1px solid #eee;
       margin-left: 88px;
-      transition: margin-left 0.3s ease;
-    }
-
-    /* Shift footer when sidebar expands */
-    .sidebar:hover ~ .main-content footer {
-      margin-left: 200px;
     }
   </style>
 </head>
