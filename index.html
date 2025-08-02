@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anti-Caste Watch</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-  <!-- Add Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -137,7 +135,6 @@
     .button-container {
       text-align: center;
       margin-bottom: 2rem;
-      position: relative;
     }
 
     .button-container a {
@@ -157,23 +154,32 @@
     }
 
     /* Report Note */
-    .report-note {
-      font-size: 0.85rem;
-      color: #b30000;
-      margin-top: 0.5rem;
-      text-align: center;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      cursor: pointer;
+    .report-note-wrapper {
       position: relative;
+      display: inline-block;
+      margin-top: 0.5rem;
     }
 
-    .report-note .info-icon {
-      font-size: 0.8rem;
+    .report-note {
+      font-size: 0.75rem;
+      color: #b30000;
+      font-weight: 300;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
     }
 
-    .report-note .tooltip {
+    .report-note:hover {
+      text-decoration: underline;
+    }
+
+    .info-icon {
+      font-size: 0.7rem;
+    }
+
+    .tooltip {
       visibility: hidden;
       width: 400px;
       background-color: #f5f5f5;
@@ -183,21 +189,25 @@
       padding: 0;
       position: absolute;
       z-index: 1;
-      bottom: 125%;
+      top: 100%;
       left: 50%;
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.3s;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 8px;
     }
 
-    .report-note:hover .tooltip {
+    .report-note-wrapper:hover .tooltip {
       visibility: visible;
       opacity: 1;
     }
 
     .tooltip-content {
       padding: 1rem;
+      font-size: 0.8rem;
+      font-weight: 300;
+      line-height: 1.6;
     }
 
     .tooltip-note {
@@ -253,9 +263,11 @@
   <main>
     <div class="button-container">
       <a href="#">Submit a Report</a>
-      <div class="report-note">
-        What happens when you make a report?
-        <span class="info-icon">ⓘ</span>
+      <div class="report-note-wrapper">
+        <div class="report-note">
+          What happens when you make a report?
+          <span class="info-icon">ⓘ</span>
+        </div>
         <div class="tooltip">
           <div class="tooltip-content">
             <p>Reports will undergo verification to determine their authenticity and will be logged in the database.</p>
