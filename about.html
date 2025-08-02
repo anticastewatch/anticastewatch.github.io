@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Saira:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style>
-    /* [Keep all your existing CSS styles from index.html] */
     body {
       margin: 0;
       padding: 0;
@@ -163,10 +162,11 @@
       padding: 2rem;
     }
 
+    /* ABOUT SECTION STYLES */
     .about-section {
       max-width: 800px;
       margin: 0 auto;
-      color: #181818; /* Ensures black text */
+      color: #181818;
     }
 
     .about-section h1 {
@@ -179,9 +179,11 @@
     .about-section h2 {
       font-family: 'Montserrat', sans-serif;
       color: #181818;
-      margin: 2rem 0 1rem 0;
+      margin: 2.5rem 0 1rem 0;
       font-size: 1.3rem;
       font-weight: 700;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e0e0e0;
     }
 
     .about-section p {
@@ -197,6 +199,21 @@
     .about-section li {
       margin-bottom: 0.8rem;
       line-height: 1.5;
+    }
+
+    .closing-statement {
+      background-color: #e6f2ff;
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin: 3rem 0 2rem 0;
+      border-left: 4px solid #1967d2;
+    }
+
+    .closing-statement p {
+      color: #1967d2;
+      font-weight: 700;
+      margin: 0;
+      font-size: 1.1rem;
     }
 
     footer {
@@ -285,7 +302,9 @@
           <li>Build pressure through transparency and undeniable proof</li>
         </ul>
         
-        <p>This is all about protecting dignity, safety, and justice. For a better, fairer future for all of us.</p>
+        <div class="closing-statement">
+          <p>This is all about protecting dignity, safety, and justice. For a better, fairer future for all of us.</p>
+        </div>
       </div>
     </div>
 
