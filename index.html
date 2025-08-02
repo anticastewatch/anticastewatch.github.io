@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anti-Caste Watch</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -135,6 +137,7 @@
     .button-container {
       text-align: center;
       margin-bottom: 2rem;
+      position: relative;
     }
 
     .button-container a {
@@ -159,6 +162,58 @@
       color: #b30000;
       margin-top: 0.5rem;
       text-align: center;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .report-note .info-icon {
+      font-size: 0.8rem;
+    }
+
+    .report-note .tooltip {
+      visibility: hidden;
+      width: 400px;
+      background-color: #f5f5f5;
+      color: #333;
+      text-align: left;
+      border-radius: 5px;
+      padding: 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .report-note:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tooltip-content {
+      padding: 1rem;
+    }
+
+    .tooltip-note {
+      background-color: #ffd6d6;
+      border-radius: 5px;
+      padding: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .tooltip-note ul {
+      margin: 0.5rem 0 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .tooltip-note li {
+      margin-bottom: 0.3rem;
     }
 
     /* Footer Section */
@@ -198,7 +253,26 @@
   <main>
     <div class="button-container">
       <a href="#">Submit a Report</a>
-      <div class="report-note">What happens when you make a report?</div>
+      <div class="report-note">
+        What happens when you make a report?
+        <span class="info-icon">ⓘ</span>
+        <div class="tooltip">
+          <div class="tooltip-content">
+            <p>Reports will undergo verification to determine their authenticity and will be logged in the database.</p>
+            <p>A direct notification will be sent to the individual's current employer. If no action is taken by the employer, a public post will be made with proofs on LinkedIn and other affiliated social media platforms.</p>
+            <p>Requests will be sent to networks of vendors, partners and employers for voluntary blacklisting.</p>
+            <p>If the person is a public sector employee (government official), social media campaigns will be initiated.</p>
+            
+            <div class="tooltip-note">
+              <strong>Note:</strong>
+              <ul>
+                <li>Every reported individual will be removed (archived) from the database after 10 years if no further remarks or incidents occur during that period.</li>
+                <li>For individuals aged 16–20, an alias name will be used. Their entry will be removed after 5 years if there are no repeat incidents.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <table>
       <thead>
@@ -218,7 +292,7 @@
           <td>Chennai</td>
           <td>Name</td>
           <td>Upper Caste</td>
-          <td>“I’ll kill you if you love a woman from my upper caste family.”</td>
+          <td>“I'll kill you if you love a woman from my upper caste family.”</td>
           <td><a href="#">Watch</a></td>
           <td>Aug 2025</td>
           <td>Employed</td>
