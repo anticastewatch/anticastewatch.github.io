@@ -17,7 +17,6 @@
       line-height: 1.6;
     }
 
-    /* SIDEBAR */
     .sidebar {
       width: 88px;
       background: #f8f9fa;
@@ -33,7 +32,6 @@
       width: 200px;
     }
 
-    /* MAIN ICONS - 50px DOWN FROM ORIGINAL */
     .sidebar-icon {
       width: 88px;
       height: 56px;
@@ -66,7 +64,6 @@
       color: #1967d2;
     }
 
-    /* MOON ICON - 50px FROM BOTTOM */
     .sidebar-footer {
       position: absolute;
       bottom: 50px;
@@ -162,7 +159,6 @@
       padding: 2rem;
     }
 
-    /* ABOUT SECTION STYLES */
     .about-section {
       max-width: 800px;
       margin: 0 auto;
@@ -206,7 +202,6 @@
       padding: 1.5rem;
       border-radius: 4px;
       margin: 3rem 0 2rem 0;
-      border-left: 4px solid #1967d2;
     }
 
     .closing-statement p {
@@ -238,7 +233,6 @@
       <span class="icon-text">About</span>
     </div>
     
-    <!-- Moon icon 50px from bottom -->
     <div class="sidebar-footer">
       <div class="sidebar-icon">
         <span class="material-icons-outlined">dark_mode</span>
@@ -314,17 +308,12 @@
   </div>
 
   <script>
-    // Navigation between pages
     document.querySelectorAll('.sidebar-icon')[0].addEventListener('click', function() {
       window.location.href = 'index.html';
-      // OR if using repo-name in URL:
-      // window.location.href = 'Anti-Caste-Watch/index.html';
     });
     
     document.querySelectorAll('.sidebar-icon')[1].addEventListener('click', function() {
       window.location.href = 'about.html';
-      // OR if using repo-name in URL:
-      // window.location.href = 'Anti-Caste-Watch/about.html';
     });
   </script>
 </body>
