@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Saira:wght@300;400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style>
+    /* [Keep all your existing CSS styles from index.html] */
     body {
       margin: 0;
       padding: 0;
@@ -165,26 +166,27 @@
     .about-section {
       max-width: 800px;
       margin: 0 auto;
+      color: #181818; /* Ensures black text */
     }
 
     .about-section h1 {
       font-family: 'Montserrat', sans-serif;
-      color: #b30000;
+      color: #181818;
       margin-bottom: 1.5rem;
+      font-size: 1.8rem;
     }
 
     .about-section h2 {
       font-family: 'Montserrat', sans-serif;
-      color: #333;
+      color: #181818;
       margin: 2rem 0 1rem 0;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 1.3rem;
+      font-weight: 700;
     }
 
     .about-section p {
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
     }
 
     .about-section ul {
@@ -193,31 +195,8 @@
     }
 
     .about-section li {
-      margin-bottom: 0.5rem;
-    }
-
-    .mission-box {
-      background-color: #ffebeb;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-      border-left: 4px solid #b30000;
-    }
-
-    .policy-box {
-      background-color: #f5f5f5;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-      border-left: 4px solid #5f6368;
-    }
-
-    .highlight-box {
-      background-color: #e6f2ff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-      border-left: 4px solid #1967d2;
+      margin-bottom: 0.8rem;
+      line-height: 1.5;
     }
 
     footer {
@@ -269,60 +248,44 @@
         
         <p>Anti-Caste Watch is a public platform created to track, document, and expose individuals who engage in casteist speech or behavior, especially in public and professional spaces.</p>
         
-        <div class="mission-box">
-          <h2>🎯 Our Mission</h2>
-          <p>We aim to build social and economic consequences for caste-based hate and discrimination — without waiting for slow-moving institutions or government bodies to act.</p>
-          <p>We must build a better society for future generations.</p>
-        </div>
+        <h2>Our Mission</h2>
+        <p>We aim to build social and economic consequences for caste-based hate and discrimination — without waiting for slow-moving institutions or government bodies to act. We must build a better society for future generations.</p>
         
-        <div class="highlight-box">
-          <h2>❓ Why This Exists</h2>
-          <p>Casteism is not just a private belief. It directly affects hiring, safety, and dignity.</p>
-          <p>When casteist threats are made publicly — especially on media or online — there must be public accountability.</p>
-          <p>Employers, professional networks, and communities must take responsibility by refusing to empower caste bigots.</p>
-          <p>It is a criminal offense and should be treated as such.</p>
-        </div>
+        <h2>Why This Exists</h2>
+        <p>Casteism is not just a private belief. It directly affects hiring, safety, and dignity. When casteist threats are made publicly — especially on media or online — there must be public accountability.</p>
+        <p>Employers, professional networks, and communities must take responsibility by refusing to empower caste bigots. It is a criminal offense and should be treated as such.</p>
         
-        <div class="highlight-box">
-          <h2>💥 What We Can Do</h2>
-          <ul>
-            <li>Document verifiable casteist statements, threats, or actions.</li>
-            <li>Record the name, employer, caste, location, and proof for each person.</li>
-            <li>Pressure institutions (companies, parties, media, etc.) to take action — and to exclude those who take pride in caste in any form.</li>
-            <li>Track whether the person has been warned, fired, defended, or ignored.</li>
-            <li>Create long-term social stigma around casteist behavior.</li>
-          </ul>
-        </div>
+        <h2>What We Can Do</h2>
+        <ul>
+          <li>Document verifiable casteist statements, threats, or actions</li>
+          <li>Record the name, employer, caste, location, and proof for each person</li>
+          <li>Pressure institutions (companies, parties, media, etc.) to take action</li>
+          <li>Track whether the person has been warned, fired, defended, or ignored</li>
+          <li>Create long-term social stigma around casteist behavior</li>
+        </ul>
         
-        <div class="policy-box">
-          <h2>🔄 Removal Policy</h2>
-          <p>We believe people can change — but only with time, accountability, and public responsibility.</p>
-          <ul>
-            <li><strong>Ages 16–20:</strong> Entries are removed after 2 years if there are no repeat offenses.</li>
-            <li><strong>Ages 21+:</strong> Entries are removed after 10 years of a clean record and a public apology.</li>
-          </ul>
-          <p>Early removal requests must include proof of transformation, such as:</p>
-          <ul>
-            <li>A sincere public apology</li>
-            <li>Ongoing anti-caste work</li>
-            <li>Surrender or cooperation with legal action</li>
-          </ul>
-        </div>
+        <h2>Removal Policy</h2>
+        <p>We believe people can change — but only with time, accountability, and public responsibility.</p>
+        <ul>
+          <li><strong>Ages 16–20:</strong> Entries are removed after 2 years if there are no repeat offenses</li>
+          <li><strong>Ages 21+:</strong> Entries are removed after 10 years of a clean record and a public apology</li>
+        </ul>
+        <p>Early removal requests must include proof of transformation, such as:</p>
+        <ul>
+          <li>A sincere public apology</li>
+          <li>Ongoing anti-caste work</li>
+          <li>Surrender or cooperation with legal action</li>
+        </ul>
         
-        <div class="highlight-box">
-          <h2>🏛 Why Without the Government?</h2>
-          <p>Government action is often slow, and in many cases, politically compromised or run by those with casteist bias.</p>
-          <p>We don't need to wait. Industry bodies, communities, and employers can take action now.</p>
-          <ul>
-            <li>Blacklist casteists from white-collar employment</li>
-            <li>Deny public-facing roles to those with a history of caste hate</li>
-            <li>Build pressure through transparency and undeniable proof</li>
-          </ul>
-        </div>
+        <h2>Why Without the Government?</h2>
+        <p>Government action is often slow, and in many cases, politically compromised or run by those with casteist bias. We don't need to wait. Industry bodies, communities, and employers can take action now:</p>
+        <ul>
+          <li>Blacklist casteists from white-collar employment</li>
+          <li>Deny public-facing roles to those with a history of caste hate</li>
+          <li>Build pressure through transparency and undeniable proof</li>
+        </ul>
         
-        <div class="mission-box">
-          <p>This is all about protecting dignity, safety, and justice. For a better, fairer future for all of us.</p>
-        </div>
+        <p>This is all about protecting dignity, safety, and justice. For a better, fairer future for all of us.</p>
       </div>
     </div>
 
@@ -332,13 +295,17 @@
   </div>
 
   <script>
-    // Simple navigation between pages
-    document.querySelector('.sidebar-icon:nth-child(1)').addEventListener('click', function() {
-      window.location.href = 'index.html'; // Your main page
+    // Navigation between pages
+    document.querySelectorAll('.sidebar-icon')[0].addEventListener('click', function() {
+      window.location.href = 'index.html';
+      // OR if using repo-name in URL:
+      // window.location.href = 'Anti-Caste-Watch/index.html';
     });
     
-    document.querySelector('.sidebar-icon:nth-child(2)').addEventListener('click', function() {
-      window.location.href = 'about.html'; // This page
+    document.querySelectorAll('.sidebar-icon')[1].addEventListener('click', function() {
+      window.location.href = 'about.html';
+      // OR if using repo-name in URL:
+      // window.location.href = 'Anti-Caste-Watch/about.html';
     });
   </script>
 </body>
