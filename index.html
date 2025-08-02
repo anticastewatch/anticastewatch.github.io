@@ -100,21 +100,33 @@
       font-size: 1rem;
     }
 
-    th, td {
-      padding: 1rem;
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 5px;
-    }
-
     th {
       background-color: #f5f5f5;
       color: #333;
       font-weight: 700;
+      padding: 1rem;
+      border-radius: 5px;
     }
 
+    td {
+      padding: 1rem;
+      background: #fff;
+      border-radius: 5px;
+    }
+
+    /* First column styling */
+    td:first-child {
+      background-color: #fafafa;
+    }
+
+    /* Alternate row styling */
+    tr:nth-child(even) td {
+      background-color: #fafafa;
+    }
+
+    /* Hover effect */
     tr:hover td {
-      background-color: #f1f1f1;
+      background-color: #e6f2ff !important; /* Light blue */
     }
 
     /* Button Container */
@@ -301,6 +313,26 @@
           <td>Sep 2025</td>
           <td>Retired</td>
           <td>Social Media Campaigns</td>
+        </tr>
+        <tr>
+          <td>Bangalore</td>
+          <td>Name</td>
+          <td>Upper Caste</td>
+          <td>“We don't rent to lower caste people.”</td>
+          <td><a href="#">Listen</a></td>
+          <td>Oct 2025</td>
+          <td>Self-employed</td>
+          <td>Local Authorities</td>
+        </tr>
+        <tr>
+          <td>Delhi</td>
+          <td>Name</td>
+          <td>Upper Caste</td>
+          <td>“You people should stick to your traditional jobs.”</td>
+          <td><a href="#">Read</a></td>
+          <td>Nov 2025</td>
+          <td>Professor</td>
+          <td>University</td>
         </tr>
       </tbody>
     </table>
