@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anti-Caste Watch</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -14,86 +16,97 @@
       font-family: 'Fraunces', serif;
       font-weight: 300;
       line-height: 1.6;
+      display: flex;
+      min-height: 100vh;
     }
 
-    /* Menu Bar */
-    .menu-bar {
+    /* Left Sidebar - Icons Only */
+    .sidebar {
+      width: 72px;
+      background: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 1rem;
+    }
+
+    .sidebar-icon {
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0.5rem 0;
+      color: #5f6368;
+      cursor: pointer;
+    }
+
+    .sidebar-icon:hover {
+      background: #e8eaed;
+    }
+
+    .sidebar-icon.active {
+      background: #e8f0fe;
+      color: #1967d2;
+    }
+
+    /* Main Content Area */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header - Logo and Search */
+    .header {
       padding: 1rem 2rem;
-      background: #fff;
-      border-bottom: 2px solid #eee;
-      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    /* Logo */
-    .menu-bar .logo {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      text-decoration: none;
+      border-bottom: 1px solid #e0e0e0;
     }
 
-    .menu-bar .logo img {
-      height: 40px;
-      width: auto;
-    }
-
-    .menu-bar .logo span {
-      font-size: 1.6rem;
+    .logo {
+      font-size: 1.8rem;
       font-weight: 700;
       color: #7b7b7b;
       letter-spacing: -0.03em;
       font-family: 'Montserrat', sans-serif;
+      margin-right: 2rem;
+      white-space: nowrap;
     }
 
-    /* Navigation */
-    .menu-bar nav {
-      display: flex;
-      gap: 1.5rem;
+    .search-container {
+      flex: 1;
+      max-width: 800px;
     }
 
-    .menu-bar nav a {
-      text-decoration: none;
+    .search-container input {
+      width: 100%;
+      padding: 0.8rem 1.2rem;
+      border: 1px solid #dfe1e5;
+      border-radius: 24px;
+      font-family: 'Fraunces', serif;
       font-size: 1rem;
-      font-weight: 400;
-      color: #181818;
-      transition: color 0.3s;
     }
 
-    .menu-bar nav a:hover {
-      color: #3b82f6;
+    .search-container input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 1px 6px rgba(32,33,36,0.08);
     }
 
-    header {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin: 0.5rem 0;
-      color: #3b3b3b;
-    }
-
-    .site-description {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.6;
-      max-width: 750px;
-      margin: 1rem auto 0 auto;
-      color: #222;
+    /* Page Content */
+    .page-content {
+      padding: 2rem 2rem 2rem 1rem;
+      flex: 1;
+      margin-left: 8px; /* Small gap from sidebar */
     }
 
     /* Table Design */
     table {
-      width: calc(100% - 6rem);
-      margin: 3rem auto;
+      width: calc(100% - 80px);
+      margin-left: 80px;
       border-collapse: separate;
       border-spacing: 0.5rem;
       text-align: left;
@@ -132,7 +145,7 @@
     /* Button Container */
     .button-container {
       text-align: center;
-      margin: 1.5rem 0;
+      margin: 1.5rem 0 1.5rem 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -190,7 +203,6 @@
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.3s;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       margin-top: 6px;
     }
 
@@ -224,133 +236,121 @@
 
     /* Footer Section */
     footer {
-      padding: 1.5rem 0;
+      padding: 1rem;
       text-align: center;
       font-size: 0.85rem;
       color: #666;
-      border-top: 2px solid #eee;
-      margin-top: 2rem;
+      border-top: 1px solid #eee;
     }
   </style>
 </head>
 <body>
-  <!-- Menu Bar -->
-  <div class="menu-bar">
-    <a href="#" class="logo">
-      <img src="Caste.jpg" alt="Anti-Caste Watch Logo">
-      <span>Anti-Caste Watch</span>
-    </a>
-    <nav>
-      <a href="#reports">Reports</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- Left Sidebar - Icons Only -->
+  <div class="sidebar">
+    <div class="sidebar-icon active">
+      <span class="material-icons">home</span>
+    </div>
+    <div class="sidebar-icon">
+      <span class="material-icons">search</span>
+    </div>
+    <div class="sidebar-icon">
+      <span class="material-icons">list_alt</span>
+    </div>
+    <div class="sidebar-icon">
+      <span class="material-icons">person</span>
+    </div>
+    <div class="sidebar-icon">
+      <span class="material-icons">settings</span>
+    </div>
   </div>
 
-  <!-- Header -->
-  <header>
-    <p>Calling out public casteist speech.</p>
-    <div class="site-description">
-      To publicly document, track and apply social pressure on individuals making casteist remarks especially those in positions of influence (including employment, media and politics) to deter future casteist behavior through visibility and consequence.
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Header with Logo and Search -->
+    <div class="header">
+      <div class="logo">Anti-Caste Watch</div>
+      <div class="search-container">
+        <input type="text" placeholder="Search reports...">
+      </div>
     </div>
-  </header>
 
-  <!-- Main Section -->
-  <main>
-    <div class="button-container">
-      <a href="#">Submit a Report</a>
-      <div class="report-note">
-        What happens when you make a report?
-        <span class="info-icon">ⓘ</span>
-        <div class="tooltip">
-          <div class="tooltip-content">
-            <p>Reports will undergo verification to determine their authenticity and will be logged in the database.</p>
-            <p>A direct notification will be sent to the individual's current employer. If no action is taken by the employer, a public post will be made with proofs on LinkedIn and other affiliated social media platforms.</p>
-            <p>Requests will be sent to networks of vendors, partners and employers for voluntary blacklisting.</p>
-            <p>If the person is a public sector employee (government official), social media campaigns will be initiated.</p>
-            
-            <div class="tooltip-note">
-              <strong>Note:</strong>
-              <ul>
-                <li>Every reported individual will be removed (archived) from the database after 10 years if no further remarks or incidents occur during that period.</li>
-                <li>For individuals aged 16–20, an alias name will be used. Their entry will be removed after 5 years if there are no repeat incidents.</li>
-              </ul>
+    <!-- Page Content -->
+    <div class="page-content">
+      <div class="button-container">
+        <a href="#">Submit a Report</a>
+        <div class="report-note">
+          What happens when you make a report?
+          <span class="info-icon">ⓘ</span>
+          <div class="tooltip">
+            <div class="tooltip-content">
+              <p>Reports will undergo verification to determine their authenticity and will be logged in the database.</p>
+              <p>A direct notification will be sent to the individual's current employer. If no action is taken by the employer, a public post will be made with proofs on LinkedIn and other affiliated social media platforms.</p>
+              <p>Requests will be sent to networks of vendors, partners and employers for voluntary blacklisting.</p>
+              <p>If the person is a public sector employee (government official), social media campaigns will be initiated.</p>
+              
+              <div class="tooltip-note">
+                <strong>Note:</strong>
+                <ul>
+                  <li>Every reported individual will be removed (archived) from the database after 10 years if no further remarks or incidents occur during that period.</li>
+                  <li>For individuals aged 16–20, an alias name will be used. Their entry will be removed after 5 years if there are no repeat incidents.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <table>
+        <thead>
+          <tr>
+            <th>City/UT</th>
+            <th>Name / Alias</th>
+            <th>Caste</th>
+            <th>Remarks</th>
+            <th>Proof</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Reported To</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Chennai</td>
+            <td>Name</td>
+            <td>Upper Caste</td>
+            <td>“I'll kill you if you love a woman from my upper caste family.”</td>
+            <td><a href="#">Watch</a></td>
+            <td>Aug 2025</td>
+            <td>Employed</td>
+            <td>Employer - HR</td>
+          </tr>
+          <tr>
+            <td>Coimbatore</td>
+            <td>Name</td>
+            <td>Upper Caste</td>
+            <td>“Caste is a divine gift from God.”</td>
+            <td><a href="#">View</a></td>
+            <td>Sep 2025</td>
+            <td>Retired</td>
+            <td>Social Media Campaigns</td>
+          </tr>
+          <tr>
+            <td>Madurai</td>
+            <td>Name</td>
+            <td>Upper Caste</td>
+            <td>“You can't sit with us during lunch - you're from a different caste.”</td>
+            <td><a href="#">Listen</a></td>
+            <td>Oct 2025</td>
+            <td>College Professor</td>
+            <td>University</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th>City/UT</th>
-          <th>Name / Alias</th>
-          <th>Caste</th>
-          <th>Remarks</th>
-          <th>Proof</th>
-          <th>Date</th>
-          <th>Status</th>
-          <th>Reported To</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Chennai</td>
-          <td>Name</td>
-          <td>Upper Caste</td>
-          <td>“I'll kill you if you love a woman from my upper caste family.”</td>
-          <td><a href="#">Watch</a></td>
-          <td>Aug 2025</td>
-          <td>Employed</td>
-          <td>Employer - HR</td>
-        </tr>
-        <tr>
-          <td>Coimbatore</td>
-          <td>Name</td>
-          <td>Upper Caste</td>
-          <td>“Caste is a divine gift from God.”</td>
-          <td><a href="#">View</a></td>
-          <td>Sep 2025</td>
-          <td>Retired</td>
-          <td>Social Media Campaigns</td>
-        </tr>
-        <tr>
-          <td>Madurai</td>
-          <td>Name</td>
-          <td>Upper Caste</td>
-          <td>“You can't sit with us during lunch - you're from a different caste.”</td>
-          <td><a href="#">Listen</a></td>
-          <td>Oct 2025</td>
-          <td>College Professor</td>
-          <td>University</td>
-        </tr>
-        <tr>
-          <td>Pondicherry</td>
-          <td>Name</td>
-          <td>Upper Caste</td>
-          <td>“We don't rent to lower caste people in this neighborhood.”</td>
-          <td><a href="#">Read</a></td>
-          <td>Nov 2025</td>
-          <td>Business Owner</td>
-          <td>Local Authorities</td>
-        </tr>
-        <tr>
-          <td>Salem</td>
-          <td>Name</td>
-          <td>Upper Caste</td>
-          <td>“Your caste people should only do manual labor jobs.”</td>
-          <td><a href="#">View</a></td>
-          <td>Dec 2025</td>
-          <td>Government Official</td>
-          <td>Department Head</td>
-        </tr>
-      </tbody>
-    </table>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Anti-Caste Watch. Built with zero funding. 100% public.
-  </footer>
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Anti-Caste Watch. Built with zero funding. 100% public.
+    </footer>
+  </div>
 </body>
 </html>
